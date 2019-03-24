@@ -14,10 +14,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
-//global configuration of routescd ryan 
+//configuración global de rutas
 app.use(require('./routes/index'));
 
-
 app.listen(process.env.PORT, () => {
-  console.log(`Server listening at port: ${process.env.PORT}`);
+  console.log('Server listening at port: ', process.env.PORT);
+  console.log('You can try the API with two diferent JSONs: ');
+  console.log(`http://localhost:${process.env.PORT}/airports/v1`);
+  console.log(`http://localhost:${process.env.PORT}/airports/v2`);
 });
